@@ -27,6 +27,7 @@ Acer Swift 3 2019 SF314-55G
 
 
 Spec
+
 	I5-8562U
 	UHD 620
 	Nvidia MX250
@@ -35,6 +36,7 @@ Spec
 	2 USB3
 	1 USB-C with PD charging and Display port compatibility
 Working
+
 	HDMI output
 	Sound (speaker and headphone jack)
 	Full QE/CI (accelerated graphics)
@@ -42,17 +44,22 @@ Working
 	all USB-A 3.0 port(USB-C not test)
 	Webcam
 Know not working
+
 	Finger print reader
 	Brightness adjust button (Up with insert botton NEED REMAP WITH DSDT)
 	Sleep
 	Microphone
 	Wifi need replace with DW1820A
 Installation
+
 	Clover
+	
 		use OsxAptioFix3Drv or you will get stuck on installation
 		Use RehabMan Clover config_UHD630.plist
 Post Installation
+
 	KEXT
+	
 		AppleALC.kext
 		CPUFriend.kext
 		Lilu.kext
@@ -62,11 +69,13 @@ Post Installation
 		VoodooPS2Keyboard.kext
 		WhateverGreen.kext
 Sound(ALC256)
+
 	applealc (ID:13) , set ID in config.plist Device/properties/....0x3f..../audio id 13
 	FakePCIID.kext +FakePCIID_Intel_HDMI_Audio.kext
 	CodecCommander.kext
 	ALCPlugFix - [Fix] Audio Distortion when using Headphones on Laptops
 DSDT Patch
+
 	Rename GFX0 to IGPU
 	Fix _WAK Arg0 v2
 	Fix Mutex with non-zero SyncLevel
@@ -76,10 +85,13 @@ DSDT Patch
 	RTC Fix
 	SMBUS Fix
 TrackPad (IC2)
+
 	VoodooI2C.kext + VoodooI2CHID.kext
 	DSDT patch
+	
 		I2C Controllers [SKL] +GPIO Controller Enable
 Dual Boot Windows
+
 	I use my own clone windows from Acer service center (Acronis True image file)
 	restore windows
 	boot to WINPE 
