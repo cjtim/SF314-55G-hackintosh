@@ -1,8 +1,6 @@
 
 # SF314-55G-hackintosh
 ## Table of content
-- [Boot]()
-- [Sound]()
 - [Spec](#spec)
 - [Know Working](#working)
 - [Not Working](#notwork)
