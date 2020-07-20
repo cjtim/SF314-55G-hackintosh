@@ -1,5 +1,8 @@
 
 # SF314-55G-hackintosh
+
+## Only tested in Mojave
+
 ## Table of content
 - [Spec](#spec)
 - [Know Working](#working)
