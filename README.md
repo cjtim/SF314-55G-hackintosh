@@ -11,6 +11,7 @@
 - [Post Installation](#postinstall)
 - [DSDT patch](#dsdt)
 - [Dual Boot Windows](#windows)
+- [Audio Line-in fix](#headphone-line-in)
 - [Ref]()
 ## Model 
 Acer swift 2019 SF314-55G hackintosh
