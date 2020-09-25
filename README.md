@@ -1,6 +1,6 @@
 
 # SF314-55G-hackintosh
-## Only tested in Mojave
+## Only tested in Mojave - This project has been discontinued :(
 
 ## Contributors
  - cjtim
