@@ -1,7 +1,10 @@
 
 # SF314-55G-hackintosh
-
 ## Only tested in Mojave
+
+## Contributors
+ - cjtim
+ - [pawanzZ](https://github.com/pawanzZ/SF314-55G-hackintosh) **for microphone working please use pawanzZ's Repo :), Thank you.**
 
 ## Table of content
 - [Spec](#spec)
