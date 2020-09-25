@@ -32,11 +32,12 @@ Acer Swift 3 2019 SF314-55G
 - Brightness control via setting
 - all USB-A 3.0 port(USB-C not test)
 - Webcam
+- Microphone (With line-in/ headphone) ref: https://github.com/hackintosh-stuff/ComboJack
 ### Know not working <a name="notwork"></a>
 - Finger print reader
 - Brightness adjust button (Up with insert botton NEED REMAP WITH DSDT)
 - Sleep
-- Microphone
+- Microphone internal
 - Wifi need replace with DW1820A
 
 ### Installation <a name="install"></a>
@@ -84,9 +85,13 @@ Acer Swift 3 2019 SF314-55G
 	- VoodooI2C.kext + VoodooI2CHID.kext
 	- DSDT patch
 		- I2C Controllers [SKL] +GPIO Controller Enable
+### Microphone with line-in fix  <a name="headphone-line-in" href="https://github.com/hackintosh-stuff/ComboJack"></a>
+- Hackintosh combojack support for alc256/alc255. ref: 
+1. Delete CodecCommander.kext，put ComboJack_Installer/VerbStub.kext in Clover/kexts/Other
+2. Run ComboJack_Installer/install.sh in terminal and reboot
+3. Done. When you attach a headphone there will be a popup asking about headphone type.
 
-
-### Dual Boot Windows <a name="windows"></a>
+### Dual Boot Windows < name="windows"></>
 
 - I use my own clone windows from Acer service center (Acronis True image file)
 - restore windows
