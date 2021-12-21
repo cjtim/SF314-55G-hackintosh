@@ -6,6 +6,9 @@ For Mojave Clover (discontinued) -> [Mojave-clover branch](https://github.com/cj
 
 **Status: WIP Daily usable**
 
+This EFI aiming to config mostly DSDT patch and try to not install kext if possible.
+
+
 ## Known working version
 * Catalina
 * Big Sur
@@ -50,12 +53,12 @@ For Mojave Clover (discontinued) -> [Mojave-clover branch](https://github.com/cj
 ### Installation <a name="install"></a>
 - Make USB from this guide [Making the installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-modern-os) from Dortania
 - Copy EFI folder to your root
+- Generate new SMBIOS [https://github.com/corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 	
 ### Post Installation <a name="postinstall"></a>
 - Not things to do here. everything is include in EFI
 - Make sure you got the right version of  [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases). Depends on MacOS version Catalina and Big Sur.
-- Generate new SMBIOS [https://github.com/corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 
 ### Information  <a name="Information"></a>
