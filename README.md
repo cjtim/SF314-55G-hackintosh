@@ -59,6 +59,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 ### Post Installation <a name="postinstall"></a>
 - Not things to do here. everything is include in EFI
 - Make sure you got the right version of  [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases). Depends on MacOS version Catalina and Big Sur.
+- Setting > TouchPad. Untick `Force Click and haptic feedback` this one causing invert click on touchpad
 
 
 ### Information  <a name="Information"></a>
