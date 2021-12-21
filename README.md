@@ -1,6 +1,14 @@
 
-# SF314-55G-hackintosh
-## Only tested in Mojave - This project has been discontinued :(
+  
+#  Acer Swift 3 2019 SF314-55G Hackintosh
+
+For Mojave Clover (discontinued) -> [Mojave-clover branch](https://github.com/cjtim/SF314-55G-hackintosh/tree/mojave-clover)
+
+**Status: WIP Daily usable**
+
+## Known working version
+* Catalina
+* Big Sur
 
 ## Contributors
  - cjtim
@@ -12,91 +20,90 @@
 - [Not Working](#notwork)
 - [Installation](#install)
 - [Post Installation](#postinstall)
-- [DSDT patch](#dsdt)
-- [Dual Boot Windows](#windows)
+- [Information](#Information)
 - [Ref]()
-## Model 
-Acer swift 2019 SF314-55G hackintosh
-Acer Swift 3 2019 SF314-55G
 
 ### Spec <a name="spec"></a>
-- I5-8562U
+- I5-8562U Whiskey lake
 - UHD 620
 - Nvidia MX250
 - ALC256
 - WD SSD 512GB
 - 2 USB3
 - 1 USB-C with PD charging and Display port compatibility
+- Intel(R) Wireless-AC 9560
 
 ### Working <a name="working"></a>
-- HDMI output
 - Sound (speaker and headphone jack)
 - Full QE/CI (accelerated graphics)
 - Brightness control via setting
-- all USB-A 3.0 port(USB-C not test)
-- Webcam
+- all USB-A 3.0 port including USB-C
+- Touchpad
+- Wifi and Bluetooth
+- Disabled dGPU
+
 ### Know not working <a name="notwork"></a>
 - Finger print reader
-- Brightness adjust button (Up with insert botton NEED REMAP WITH DSDT)
 - Sleep
-- Microphone
-- Wifi need replace with DW1820A
+- internal microphone
 
 ### Installation <a name="install"></a>
-- Clover
-	- **use OsxAptioFix3Drv** or you will get stuck on installation
-	- Use RehabMan Clover config_UHD630.plist
-- Boot
-	- Normal boot : config.plist
-	- Installer boot : RehabMan-laptop-UHD630.plist
+- Make USB from this guide [Making the installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-modern-os) from Dortania
+- Copy EFI folder to your root
 
 	
 ### Post Installation <a name="postinstall"></a>
-
-- KEXT
-	- AppleALC.kext
-	- CPUFriend.kext
-	- Lilu.kext
-	- NoTouchID.kext
-	- VirtualSMC.kext (instead of FakeSMC.kext) all plugins
-	- VoodooI2C.kext + VoodooI2CHID.kext
-	- VoodooPS2Keyboard.kext
-	- WhateverGreen.kext
-
-- Sound(ALC256)
-	- applealc (ID:13) , 
-	- set ID in config.plist Device/properties/....0x3f..../audio id 13
-	- FakePCIID.kext +FakePCIID_Intel_HDMI_Audio.kext
-	- CodecCommander.kext
-	- ALCPlugFix - [Fix] Audio Distortion when using Headphones on Laptops
-
-- Use VirualSMC to fix battery percent
-- NoTouchID.kext fix slow show password digitbox
-
-### DSDT Patch <a name="dsdt"></a>
-
-- Rename GFX0 to IGPU
-- Fix _WAK Arg0 v2
-- Fix Mutex with non-zero SyncLevel
-- HPET Fix
-- IRQ Fix
-- OS Check Fix ( Windows 10 )
-- RTC Fix
-- SMBUS Fix
-- TrackPad (IC2)
-	- VoodooI2C.kext + VoodooI2CHID.kext
-	- DSDT patch
-		- I2C Controllers [SKL] +GPIO Controller Enable
+- Not things to do here. everything is include in EFI
+- Make sure you got the right version of  [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases). Depends on MacOS version Catalina and Big Sur.
+- Generate new SMBIOS [https://github.com/corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 
-### Dual Boot Windows <a name="windows"></a>
+### Information  <a name="Information"></a>
+- Config.plist ** 
+	- The one from dortania's tutorial won't works and gets kernel panic. Change to following settings.
+	- `EnableWriteUnprotector=True`
+	- `RebuildAppleMemoryMap=False`
+	- Recommend `MacBookPro15,2` 
+		- tried `MacBookPro15,1` seems like brightness control not working.
 
-- I use my own clone windows from Acer service center (Acronis True image file)
-- restore windows
-- boot to WINPE 
-- use DISKPART mount efi volume
-	- bcdboot C:\Windows /s <efi letter>: /f UEFI
+ - Graphics - `PciRoot(0x0)/Pci(0x2,0x0)`
+	 - `AAPL,ig-platform-id` = `0000A53E`
+	 - `device-id` = `A53E0000`
 
+ - DSDT
+	 - Touchpad
+		 - `SSDT-GPIO.aml`
+		 - `SSDT-XOSI.aml`
+	 - `SSDT-EC.aml` - 
+	 - `SSDT-HPET.aml`
+	 - `SSDT-PLUG.aml` - Allow Native CPU Power management
+	 - `SSDT-PMC.aml` - Fix Native NVRAM **(Your installation won't finished and freeze without this)
+	 - `SSDT-PNLF.aml` - Fix backlight brightness control
+	 - `SSDT-dGPU-Off.aml`  - Disable dGPU this one is special made for only this laptop.
+ - Kext
+	 - Wifi
+		 - `AirportItlwm.kext`
+	 - Bluetooth
+		 - `IntelBluetoothFirmware.kext`
+		 - `IntelBluetoothInjector.kext`
+	 - Sound - `layout-id` is `17` or `5,11,13` is work as well
+	 	 - `AppleALC.kext`
+		 - `AppleALCU.kext`	
+	 - `Lilu.kext` and `WhateverGreen.kext`
+	 - VirtualSMC
+		 - `SMCBatteryManager.kext`
+		 - `SMCProcessor.kext`
+		 - `SMCSuperIO.kext`
+		 - `VirtualSMC.kext`
+	 - VoodooI2C with DSDT patch to work.
+		 - `VoodooI2C.kext`
+		 - `VoodooI2CHID.kext`
+	 - `VoodooPS2Controller.kext`
+	 - `USBMap.kext` - Special made for this device [Why should you USB map](https://dortania.github.io/OpenCore-Post-Install/usb/#macos-and-the-15-port-limit)
+
+### TODO
+- [ ] Fix HDMI
+- [ ] Fix sleep
 
 ## Ref.
 - Thanks to richardchiu [Guide] Acer Swift 5 SF514-53t whiskey lake MacOS10.14.5
