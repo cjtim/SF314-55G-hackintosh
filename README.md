@@ -44,6 +44,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 - Touchpad
 - Wifi and Bluetooth
 - Disabled dGPU
+- Sleep on close lid
 
 ### Know not working <a name="notwork"></a>
 - Finger print reader
@@ -107,7 +108,6 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 
 ### TODO
 - [ ] Fix HDMI
-- [ ] Fix sleep
 
 ## Ref.
 - Thanks to richardchiu [Guide] Acer Swift 5 SF514-53t whiskey lake MacOS10.14.5
