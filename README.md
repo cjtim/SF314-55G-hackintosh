@@ -38,7 +38,9 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 
 ### Working <a name="working"></a>
 - Sound (speaker and headphone jack)
+  - Headphone and headset work via ComboJack and VerbStub.kext
 - Full QE/CI (accelerated graphics)
+- HDMI and DisplayPort with audio
 - Brightness control via setting
 - all USB-A 3.0 port including USB-C
 - Touchpad
@@ -107,7 +109,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 	 - `USBMap.kext` - Special made for this device [Why should you USB map](https://dortania.github.io/OpenCore-Post-Install/usb/#macos-and-the-15-port-limit)
 
 ### TODO
-- [ ] Fix HDMI
+- [x] Fix HDMI
 
 ## Ref.
 - Thanks to richardchiu [Guide] Acer Swift 5 SF514-53t whiskey lake MacOS10.14.5
