@@ -46,11 +46,10 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 - Touchpad
 - Wifi and Bluetooth
 - Disabled dGPU
-- Sleep on close lid
+- Sleep
 
 ### Know not working <a name="notwork"></a>
 - Finger print reader
-- Sleep
 - internal microphone
 
 ### Installation <a name="install"></a>
