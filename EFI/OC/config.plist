@@ -1204,7 +1204,7 @@
 			<key>PickerVariant</key>
 			<string>Auto</string>
 			<key>PollAppleHotKeys</key>
-			<false/>
+			<true/>
 			<key>ShowPicker</key>
 			<true/>
 			<key>TakeoffDelay</key>
@@ -1864,16 +1864,6 @@
 				<string>OpenPartitionDxe.efi</string>
 				<key>Path</key>
 				<string>OpenPartitionDxe.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>OpenUsbKbDxe.efi</string>
-				<key>Path</key>
-				<string>OpenUsbKbDxe.efi</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Arguments</key>

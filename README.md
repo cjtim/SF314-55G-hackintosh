@@ -47,6 +47,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 - Wifi and Bluetooth
 - Disabled dGPU
 - Sleep
+- FireVault
 
 ### Know not working <a name="notwork"></a>
 - Finger print reader
