@@ -93,7 +93,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 	 - Bluetooth
 		 - `IntelBluetoothFirmware.kext`
 		 - `IntelBluetoothInjector.kext`
-	 - Sound - `layout-id` is `17` or `5,11,13` is work as well
+	 - Sound - `layout-id` is `56`
 	 	 - `AppleALC.kext`
 		 - `AppleALCU.kext`	
 	 - `Lilu.kext` and `WhateverGreen.kext`
