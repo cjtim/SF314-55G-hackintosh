@@ -46,10 +46,10 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 | Graphic 🏞 | ✅ Intel UHD 620 and completly disable dGPU (with DSDT and Whatevergreen)|
 | HDMI and DisplayPort 📺 | ✅ With audio on both port|
 | Brightness ☀️ | ✅ |
-| USB-A and USB-C 🔊 | ✅ Completly disable Fingerprint and SDCard reader with USBMapping|
-| Touchpad | ✅ |
-| Wifi and Bluetooth 🔊 | ✅ Handoff, copy file across device (but No AirDrop)|
-| Sleep | ✅ |
+| USB-A and USB-C 📁 | ✅ Completly disable Fingerprint and SDCard reader with USBMapping|
+| Touchpad 🖱| ✅ |
+| Wifi and Bluetooth ☁️ | ✅ Handoff, copy file across device (but No AirDrop)|
+| Sleep 🛌 | ✅ |
 | FireVault 🔐  | ✅ |
 
 ### Know not working ❌<a name="notwork"></a> 
