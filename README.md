@@ -58,12 +58,12 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 ### Installation 🍱 <a name="install"></a>
 - Make USB from this guide [Making the installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-modern-os) from Dortania
 - Copy EFI folder to your root
+- Make sure you got the right version of  [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases). Depends on MacOS version Catalina and Big Sur.
 - Generate new SMBIOS [https://github.com/corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 	
 ### Post Installation <a name="postinstall"></a>
 - Not things to do here. everything is include in EFI
-- Make sure you got the right version of  [AirportItlwm.kext](https://github.com/OpenIntelWireless/itlwm/releases). Depends on MacOS version Catalina and Big Sur.
 - Setting > TouchPad. Untick `Force Click and haptic feedback` this one causing invert click on touchpad
 - (Optional) Install ComboJack for working headset microphone and VerbStub.kext.
 
