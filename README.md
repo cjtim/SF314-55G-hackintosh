@@ -1,5 +1,6 @@
 
 
+
   
 #  Acer Swift 3 2019 SF314-55G Hackintosh
 
@@ -11,12 +12,8 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 
 
 ## Known working version
-* Catalina
-* Big Sur
-
-## Contributors
- - cjtim
- - [pawanzZ](https://github.com/pawanzZ/SF314-55G-hackintosh) **for microphone working please use pawanzZ's Repo :), Thank you.**
+* Catalina - 10.15.7
+* Big Sur - 11.6.1
 
 ## Table of content
 - [Spec](#spec)
@@ -24,7 +21,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 - [Not working ❌](#notwork)
 - [Installation 🍱](#install)
 - [Post Installation](#postinstall)
-- [Information](#Information)
+- [FYI](#Information)
 - [Ref]()
 
 ### Spec <a name="spec"></a>
@@ -42,7 +39,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 
 | Feature | Note |
 |--|--|
-| Sound 🔊 | Headphone and headset work via ComboJack and VerbStub.kext |
+| Sound 🔊 | ✅ Speaker and Headphone (headset microphone work via ComboJack and VerbStub.kext) |
 | Graphic 🏞 | ✅ Intel UHD 620 and completly disable dGPU (with DSDT and Whatevergreen)|
 | HDMI and DisplayPort 📺 | ✅ With audio on both port|
 | Brightness ☀️ | ✅ |
@@ -67,7 +64,7 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 - Setting > TouchPad. Untick `Force Click and haptic feedback` this one causing invert click on touchpad
 - (Optional) Install ComboJack for working headset microphone and VerbStub.kext.
 
-### Information  <a name="Information"></a>
+### For your infomation  <a name="Information"></a>
 - Config.plist ** 
 	- Start with this [Laptop Coffee Lake and Whiskey Lake](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html) 
 	- The one from dortania's tutorial won't works and gets kernel panic. Change to following settings.
@@ -115,3 +112,8 @@ This EFI aiming to config mostly DSDT patch and try to not install kext if possi
 
 ## Ref.
 - Thanks to richardchiu [\[Guide\] Acer Swift 5 SF514-53t whiskey lake MacOS10.14.5](https://www.tonymacx86.com/threads/guide-acer-swift-5-sf514-53t-whiskey-lake-macos10-14-5.277618/)
+
+
+## Contributors
+ - cjtim
+ - [pawanzZ](https://github.com/pawanzZ/SF314-55G-hackintosh) **for microphone working please use pawanzZ's Repo :), Thank you.**
